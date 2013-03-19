@@ -6,7 +6,7 @@ html {
 
 body{
     margin:0;
-    padding:@kol-headerHeight 0 @kol-footerHeight;
+    padding:0;
     font-size:@kol-base-fontsize;
     line-height:@kol-base-lineheight;
     #kol-font > .Arial;
@@ -173,18 +173,42 @@ body.progress{
     }
 }
 
-#container{
-    min-width: @kol-MinPageWidth;
-    max-width: @kol-MaxPageWidth;
-    margin: 0 auto;
-    background: @kol-white;
+//.ctn{
+//    min-width: @kol-MinPageWidth;
+//    max-width: @kol-MaxPageWidth;
+//    margin: 0 auto;
+//    background: @kol-white;
+//}
+
+.stage,
+.page:nth-of-type(4){
+    #kol-tools > .bg("/backgrounds/bg_top.jpg");
+    background-size:cover;
 }
 
-#header{
+.stage{
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 1;
+    + .page{
+        background: @kol-green;
+        margin-top: 2000px;
+    }
 }
 
-#content{
-}
-
-#footer{
+.page{
+    position: relative;
+    z-index: 2;
+    min-height: 890px;
+    background: @kol-grey;
+    &:nth-of-type(4){
+        &:before{
+            content: "";
+            #kol-tools > .posabs;
+            background: rgba(0,0,0,.8)
+        }
+    }
 }
