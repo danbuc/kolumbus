@@ -21,9 +21,12 @@ body{
 a{
     text-decoration: none;
     color: inherit;
+    font-size: 12px;
+    font-weight: lighter;
+    font-family: Novecento;
     #kol-transition > .generic(all, .2s, linear);
     &:hover{
-        color: @kol-black-hover;
+        color: @kol-white-hover;
     }
 }
 p{
@@ -116,6 +119,7 @@ h1,h2,h3,h4,h5,h6,.h1,.h2,.h3,.h4,.h5,.h6{
     //margin:0 0 14px;
     font-size: 44px;
     line-height: 46px;
+    letter-spacing: 5px;
     font-family: Museo Sans;
     font-weight: 900;
 }
@@ -182,17 +186,22 @@ body.progress{
             display: inline-block;
             text-align: center;
             &:before{
-                content:"";
-                display: block;
-                width: 36px;
-                height: 10px;
                 margin: 0 auto 30px;
-                #kol-tools > .bg("/elements/icon.svg");
             }
         }
         .h3{
             color: @kol-white;
             margin-bottom: 60px;
+        }
+    }
+    &:nth-of-type(2) .h2,
+    &:nth-of-type(4) a{
+        &:before{
+            content:"";
+            display: block;
+            width: 36px;
+            height: 10px;
+            #kol-tools > .bg("/elements/icon.svg");
         }
     }
     &:nth-of-type(4){
@@ -203,6 +212,22 @@ body.progress{
             z-index: 1;
             #kol-tools > .posabs;
             background: rgba(0,0,0,.75)
+        }
+        .h2{
+            margin-bottom: 9px;
+        }
+        .h3{
+            display: inline-block;
+            width: 342px;
+            padding-top: 16px;
+            border-top: 1px solid @kol-grey2;
+        }
+        a{
+            display: block;
+            &:before{
+                margin: 19px auto 12px;
+                background-position: -46px 0;
+            }
         }
     }
     &.stage{
