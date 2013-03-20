@@ -113,8 +113,10 @@ h1,h2,h3,h4,h5,h6,.h1,.h2,.h3,.h4,.h5,.h6{
 }
 .h2{
     //margin:0 0 14px;
-    font-size: 30px;
-    line-height: 28px;
+    font-size: 44px;
+    line-height: 46px;
+    font-family: Museo Sans;
+    font-weight: 900;
 }
 .h3{
     //margin:0 0 14px;
@@ -173,48 +175,83 @@ body.progress{
     }
 }
 
-//.ctn{
-//    min-width: @kol-MinPageWidth;
-//    max-width: @kol-MaxPageWidth;
-//    margin: 0 auto;
-//    background: @kol-white;
-//}
-
-.stage,
-.page:nth-of-type(4){
-    #kol-tools > .bg("/backgrounds/bg_top.jpg");
-    background-size:cover;
-}
-
-.stage{
-    position: fixed;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    z-index: 1;
-    + .page{
-        background: @kol-green;
-        margin-top: 2000px;
-    }
-}
-
 .page{
     position: relative;
     z-index: 2;
-    min-height: 890px;
+    min-height: 450px;
     background: @kol-grey;
     overflow:hidden;
+//bo vertical-center
+    text-align: center;
+    &:before {
+      content: '';
+      display: inline-block;
+      height: 100%;
+      vertical-align: middle;
+      margin-right: -0.25em;
+    }
+    .center{
+        position: relative;
+        z-index: 2;
+        width: 100%;
+        max-width: @kol-MaxPageWidth;
+        display: inline-block;
+        vertical-align: middle;
+    }
+//eo vertical-center
     &:nth-of-type(4){
-        &:before{
+        color: @kol-white;
+        text-transform: uppercase;
+        &:after{
             content: "";
+            z-index: 1;
             #kol-tools > .posabs;
-            background: rgba(0,0,0,.8)
+            background: rgba(0,0,0,.75)
+        }
+    }
+    &.stage{
+        position: fixed;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        z-index: 1;
+        #kol-tools > .bg("/backgrounds/bg_top.jpg");
+        background-size:cover;
+        + .page{
+            background: @kol-green;
+            margin-top: 2000px;
+            overflow: visible;
+            &:after{
+                content: "";
+                position: absolute;
+                top: -10px;
+                left: 0;
+                width: 100%;
+                height:20px;
+                background: transparent url("@{kol-image-path}/elements/border.svg") repeat-x;
+                background-size: 12px 19px;
+            }
+        }
+        .center{
+            width: 94%;
+            max-width: 600px;
+            margin-top: -5%;
+        }
+        .logo{
+            display: block;
+            #kol-tools > .ir;
+            img{
+                width: 100%;
+                height: auto;
+            }
         }
     }
 }
 
 video{
     position: absolute;
+    top: 0;
+    left: 0;
     width: 100%;
 }
