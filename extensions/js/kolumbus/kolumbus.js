@@ -13,16 +13,16 @@ var kolumbus = (function(kolumbus) {
       rpc;
   
   var __subscribe = function(events, cb, once) {
-    _(events.replace(/(\s)\s*/g, "$1").split(" ")).forEach(function(e) {
+    $.each(events.replace(/(\s)\s*/g, "$1").split(" "), function(idx, e) {
       subscriptions[e] || (subscriptions[e] = []);
       subscriptions[e].push({ cb: cb, once: once });
     });
   };
-  
+
   kolumbus.subscribe = function(e, cb) {
     __subscribe(e, cb, false);
   };
-  
+
   kolumbus.subscribeOnce = function(e, cb) {
     __subscribe(e, cb, true);
   };
