@@ -3,5 +3,6 @@
   "extensions/js/kolumbus/modernizr.tests.js",
   "extensions/js/ext/jquery-1.9.1.js",
   "extensions/js/kolumbus/kolumbus.js",
-  "extensions/js/kolumbus/contentsizer.js"
+  "extensions/js/kolumbus/contentsizer.js",
+  "extensions/js/kolumbus/videoscaler.js"
 ]

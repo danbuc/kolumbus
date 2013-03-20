@@ -204,6 +204,7 @@ body.progress{
     z-index: 2;
     min-height: 890px;
     background: @kol-grey;
+    overflow:hidden;
     &:nth-of-type(4){
         &:before{
             content: "";
@@ -211,4 +212,9 @@ body.progress{
             background: rgba(0,0,0,.8)
         }
     }
+}
+
+video{
+    position: absolute;
+    width: 100%;
 }
