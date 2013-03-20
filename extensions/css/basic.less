@@ -7,7 +7,7 @@ html {
 body{
     margin:0;
     padding:0;
-    font-family: Source Code Pro;
+    #kol-font > .SourceCodePro;
     font-size:@kol-base-fontsize;
     line-height:@kol-base-lineheight;
     color: @kol-blue;
@@ -22,8 +22,7 @@ a{
     text-decoration: none;
     color: inherit;
     font-size: 12px;
-    font-weight: lighter;
-    font-family: Novecento;
+    #kol-font > .HelveticaNeue;
     #kol-transition > .generic(all, .2s, linear);
     &:hover{
         color: @kol-white-hover;
@@ -111,23 +110,19 @@ h1,h2,h3,h4,h5,h6,.h1,.h2,.h3,.h4,.h5,.h6{
 }
 
 .h1{
-    //margin:0 0 18px;
     font-size: 36px;
     line-height: 38px;
 }
 .h2{
-    //margin:0 0 14px;
+    #kol-font > .MuseoSans;
     font-size: 44px;
     line-height: 46px;
     letter-spacing: 5px;
-    font-family: Museo Sans;
-    font-weight: 900;
 }
 .h3{
-    //margin:0 0 14px;
     font-size: 18px;
     line-height: 21px;
-    font-family: Novecento;
+    #kol-font > .HelveticaNeue;
 }
 
 .progress{
