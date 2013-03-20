@@ -7,9 +7,10 @@ html {
 body{
     margin:0;
     padding:0;
+    font-family: Source Code Pro;
     font-size:@kol-base-fontsize;
     line-height:@kol-base-lineheight;
-    #kol-font > .Arial;
+    color: @kol-blue;
     background:@kol-white;
     //text-rendering:optimizeLegibility; /* may cause render issues */
     overflow-y: scroll;
@@ -120,36 +121,10 @@ h1,h2,h3,h4,h5,h6,.h1,.h2,.h3,.h4,.h5,.h6{
 }
 .h3{
     //margin:0 0 14px;
-    font-size: 22px;
-    line-height: 24px;
-}
-.h4{
-    //margin:0 0 2px;
     font-size: 18px;
-    line-height: 22px;
+    line-height: 21px;
+    font-family: Novecento;
 }
-.h5{
-    //margin:0 0 2px;
-    font-size:14px;
-    text-transform: uppercase;
-}
-.h6{
-    //margin:0 0 2px;
-    font-size:12px;
-    text-transform: uppercase;
-}
-
-.print{
-    display:none;
-}
-
-//iframe.fblike{
-//    display: inline-block;
-//    border:0;
-//    overflow:hidden;
-//    width:48px;
-//    height:21px;
-//}
 
 .progress{
     &:after{
@@ -199,6 +174,27 @@ body.progress{
         vertical-align: middle;
     }
 //eo vertical-center
+    &:nth-of-type(2){
+        .center{
+            max-width: 670px;
+        }
+        .h2{
+            display: inline-block;
+            text-align: center;
+            &:before{
+                content:"";
+                display: block;
+                width: 36px;
+                height: 10px;
+                margin: 0 auto 30px;
+                #kol-tools > .bg("/elements/icon.svg");
+            }
+        }
+        .h3{
+            color: @kol-white;
+            margin-bottom: 60px;
+        }
+    }
     &:nth-of-type(4){
         color: @kol-white;
         text-transform: uppercase;
