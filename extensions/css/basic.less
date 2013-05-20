@@ -17,6 +17,9 @@ body{
     *+html & {
         overflow-y: auto; //fix IE7 double scrollbar
     }
+    ::selection{
+        background: @kol-red;
+    }
 }
 a{
     text-decoration: none;
@@ -25,7 +28,7 @@ a{
     #kol-font > .HelveticaNeue;
     #kol-transition > .generic(all, .2s, linear);
     &:hover{
-        color: @kol-white-hover;
+        text-shadow: -3px -3px 0 @kol-green,3px 3px 0 @kol-red;
     }
 }
 p{
@@ -104,7 +107,7 @@ h1,h2,h3,h4,h5,h6,.h1,.h2,.h3,.h4,.h5,.h6{
     font-size:100%;
     line-height:normal;
 }
-.h1, .h2, .h3, .h4, .h5, .h6{
+.h1, .h2, .h3, .h5, .h6{
     text-transform: uppercase;
     //letter-spacing: -1px;
 }
@@ -114,10 +117,10 @@ h1,h2,h3,h4,h5,h6,.h1,.h2,.h3,.h4,.h5,.h6{
     line-height: 38px;
 }
 .h2{
-    #kol-font > .MuseoSans;
     font-size: 44px;
     line-height: 46px;
     letter-spacing: 5px;
+    #kol-font > .MuseoSans;
 }
 .h3{
     font-size: 18px;
@@ -171,11 +174,17 @@ body.progress{
         max-width: @kol-MaxPageWidth;
         display: inline-block;
         vertical-align: middle;
+        @media screen and (max-width:@kol-MaxPageWidth){
+            max-width: 90%;
+        }
     }
 //eo vertical-center
     &:nth-of-type(2){
         .center{
             max-width: 670px;
+            @media screen and (max-width:@kol-MaxPageWidth){
+                max-width: 90%;
+            }
         }
         .h2{
             display: inline-block;
@@ -197,6 +206,55 @@ body.progress{
             width: 36px;
             height: 10px;
             #kol-tools > .bg("/elements/icon.svg");
+        }
+    }
+    &:nth-of-type(3){
+        dl{
+            display: inline-block;
+            max-width: 42.9%;
+            margin-bottom: 50px;
+            @media @smartphone{
+                max-width: 100%;
+            }
+            &:nth-of-type(2n+1){
+                margin-right: 12.5%;
+                @media @smartphone{
+                    margin-right: 0;
+                }
+            }
+            dt{
+                margin-bottom: 40px;
+                span{
+                    @square: 130px;
+                    display: block;
+                    width: @square;
+                    height: @square;
+                    margin: 0 auto 40px;
+                    background: transparent 50% 50%;
+                    background-size: contain;
+                    border: 5px solid @kol-white;
+                    #kol-border-radius > .generic(@square);
+                    #kol-transition > .generic(all, .35s, linear);
+                    #kol-tools > .ir;
+                    &:hover{
+                        border: 12px solid @kol-red;
+                        #kol-transform > .generic(rotate(720deg) scale(1.25));
+                    }
+                }
+            }
+            dd{
+                color: @kol-red;
+            }
+            .h4{
+                a{
+                    display: block;
+                    margin-bottom: 10px;
+                    font-size: 18px;
+                    line-height: 21px;
+                    text-transform: uppercase;
+                    #kol-font > .MuseoSans;
+                }
+            }
         }
     }
     &:nth-of-type(4){
