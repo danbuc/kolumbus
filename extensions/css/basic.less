@@ -12,8 +12,11 @@ body{
     line-height:@kol-base-lineheight;
     color: @kol-blue;
     background:@kol-white;
-    //text-rendering:optimizeLegibility; /* may cause render issues */
     overflow-y: scroll;
+    @media @smartphone{
+        font-size: @kol-base-fontsize - 4;
+        line-height:@kol-base-lineheight - 4;
+    }
     *+html & {
         overflow-y: auto; //fix IE7 double scrollbar
     }
@@ -121,11 +124,19 @@ h1,h2,h3,h4,h5,h6,.h1,.h2,.h3,.h4,.h5,.h6{
     line-height: 46px;
     letter-spacing: 5px;
     #kol-font > .MuseoSans;
+    @media @smartphone{
+        font-size: 25px;
+        line-height: 29px;
+    }
 }
 .h3{
     font-size: 18px;
     line-height: 21px;
     #kol-font > .HelveticaNeue;
+    @media @smartphone{
+        font-size: 13px;
+        line-height: 16px;
+    }
 }
 
 .progress{
