@@ -200,6 +200,15 @@ body.progress{
         .h2{
             display: inline-block;
             text-align: center;
+            
+            //clip effect (webkit only)
+            -webkit-text-fill-color: transparent;
+            background: -webkit-linear-gradient(transparent, transparent), url("@{kol-image-path}/backgrounds/bg_top.jpg") repeat;
+            background: -o-linear-gradient(transparent, transparent);
+            -webkit-background-clip: text;
+            background-position: 0 0, 0 -300px;
+            #kol-animation > .generic(animateSlider 5s linear infinite alternate);
+ 
             &:before{
                 margin: 0 auto 30px;
             }
