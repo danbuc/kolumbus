@@ -233,6 +233,7 @@ body.progress{
             display: inline-block;
             max-width: 42.9%;
             margin-bottom: 50px;
+            vertical-align: top;
             @media @smartphone{
                 max-width: 100%;
             }
@@ -264,6 +265,9 @@ body.progress{
             }
             dd{
                 color: @kol-red;
+                a{
+                    color: @kol-blue;
+                }
             }
             .h4{
                 a{
@@ -312,6 +316,7 @@ body.progress{
         z-index: 1;
         #kol-tools > .bg("/backgrounds/bg_top.jpg");
         background-size:cover;
+        background-position: 0 100%;
         + .page{
             background: @kol-green;
             margin-top: 2000px;
