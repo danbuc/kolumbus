@@ -5,7 +5,7 @@ kolumbus.widget("videoscaler", function($win, $doc) {
   var getNode        = function(elm){ return document.getElementById(elm) },
       selector       = ".js_scale",
       resized = 0;
-      
+
   Videoscaler = function($vid) {
     var visualratio    = 1280/720,
         jsScaleStyles  = "js_scale_styles",
@@ -15,13 +15,11 @@ kolumbus.widget("videoscaler", function($win, $doc) {
         $slot          = $vid.parent(),
         slotwidth, slotheight, slotratio, rulesStr, width, height;
 
-  console.log($slot);
-
     var resizer = function(e) {
       slotwidth = $slot.width();
       slotheight = $slot.height();
       slotratio = slotwidth / slotheight;
-      
+
       if (slotratio < visualratio) {
         width = slotheight * visualratio;
         height = width / visualratio;
@@ -45,7 +43,7 @@ kolumbus.widget("videoscaler", function($win, $doc) {
 
     $win.bind(resize, resizer).trigger(resize);
   };
-  
+
 kolumbus.subscribe("kolumbus:ready", function($node) {
   $node.find(selector).each(function() {
     new Videoscaler($(this));
