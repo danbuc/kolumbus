@@ -67,7 +67,7 @@
   .none(){
     .kol-appearance();
   }
-  
+
   .no-search(){
     &::-webkit-search-cancel-button,
     &::-webkit-search-decoration,
@@ -216,11 +216,11 @@
 // gradient -------------------------------------------------------------------
 
 .kol-linear-gradient(@val) {
-  background:-webkit-linear-gradient(@val); 
+  background:-webkit-linear-gradient(@val);
   background:-moz-linear-gradient(@val);
   background:-ms-linear-gradient(@val);
   background:-o-linear-gradient(@val);
-  background:linear-gradient(@val); 
+  background:linear-gradient(@val);
 }
 
 .kol-gradient-radial(@val1,@val2) {
@@ -578,7 +578,7 @@
 }
 
 // hyphenation ----------------------------------------------------------------
- 
+
 .kol-hyphenation(@val) {
     -webkit-hyphens: @val;
     -moz-hyphens: @val;
@@ -586,7 +586,7 @@
     -o-hyphens: @val;
     hyphens: @val;
 }
- 
+
 #kol-hyphenation{
     .auto(){
         .kol-hyphenation(auto);
@@ -620,21 +620,21 @@
 
 #kol-tools{
   .ir() { //image-replacement (http://nicolasgallagher.com/another-css-image-replacement-technique/)
-    font: 0/0 a; 
-    text-shadow: none; 
+    font: 0/0 a;
+    text-shadow: none;
     color: transparent;
   }
-  
+
   .ir2() { //image-replacement (http://www.zeldman.com/2012/03/01/replacing-the-9999px-hack-new-image-replacement/)
     text-indent: 100%;
     white-space: nowrap;
     overflow: hidden;
   }
-  
+
   .bg(@val){ //use: #kol-tools > .bg("img.png");
     background: transparent url("@{kol-image-path}@{val}") no-repeat 0 0;
   }
-  
+
   .posabs(){
     position: absolute;
     top: 0;

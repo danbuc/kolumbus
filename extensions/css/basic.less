@@ -151,7 +151,7 @@ h1,h2,h3,h4,h5,h6,.h1,.h2,.h3,.h4,.h5,.h6{
         margin: @width / -2 0 0  @width / -2;
         content: "";
         opacity: .6;
-        background: rgba(0,0,0,1) url("@{kol-image-path}/elements/el_loaddark.gif") no-repeat 50% 50%;
+        background: rgba(0,0,0,1) url("@{kol-image-path}/elements/el_loaddark.gif") no-repeat 50% 50%; /*ImageEmbed:skip*/
         #kol-border-radius > .generic(10px);
         #kol-transition > .fade;
         #kol-animation > .showProgress;
@@ -200,7 +200,7 @@ body.progress{
         .h2{
             display: inline-block;
             text-align: center;
-            
+
             //clip effect (webkit only)
             -webkit-text-fill-color: transparent;
             background: -webkit-linear-gradient(transparent, transparent), url("@{kol-image-path}/backgrounds/bg_top.jpg") repeat;
@@ -208,7 +208,7 @@ body.progress{
             -webkit-background-clip: text;
             background-position: 0 0, 0 -300px;
             -webkit-animation: animateSlider 5s linear infinite alternate;
- 
+
             &:before{
                 margin: 0 auto 30px;
             }
